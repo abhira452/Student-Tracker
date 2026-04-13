@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Expense Dashboard</h2>
+
+<a href="/logout">Logout</a>
+
+<form method="POST">
+    <input type="number" name="amount" placeholder="Amount" required>
+    <input type="text" name="category" placeholder="Category" required>
+    <button type="submit">Add Expense</button>
+</form>
+
+<h3>Total Spending: ₹{{ total }}</h3>
+
+<h4 style="color:red;">{{ suggestion }}</h4>
+
+<ul>
+    {% for e in data %}
+        <li>₹{{ e[2] }} - {{ e[3] }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html> 
